@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dear Diary</title>
+    <title>Emotional Journal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
 </head>
 
@@ -13,8 +13,11 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
+                <figure class="image is-48x48">
+                    <img src="/media/logo.png" alt="">
+                </figure>
                 <h1 class="title">
-                    Dear Diary
+                    Emotional Journal
                 </h1>
             </div>
         </div>
@@ -40,7 +43,10 @@
                             <strong>{{ entry.date_posted}} </strong>
                             <br> {{ entry.text }}
                         </p>
-                        <img src="{{ entry.cover.url}}" alt="">
+                        <figure class="image is-128x128">
+                            <img src="{{ entry.cover.url}}" alt="">
+                        </figure>
+                        
                     </div>
                 </div>
             </article>

@@ -12,7 +12,7 @@ def index(request):
 
 def add(request):
     if request.method == 'POST':
-        form = EntryForm(request.POST)
+        form = EntryForm(request.POST, request.FILES)
 
         # check is the data entered is valid
         if form.is_valid():

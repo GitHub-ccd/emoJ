@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dear Diary</title>
+    <title>Emotional Journal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
 </head>
 
@@ -13,22 +13,27 @@
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
+                <figure class="image is-48x48">
+                    <img src="/media/logo.png" alt="">
+                </figure>
                 <h1 class="title">
-                    Dear Diary
+                    Emotional Journal - data entry form
                 </h1>
             </div>
         </div>
     </section>
     <section class="section">
         <div class="container">
-            <form method="POST" action="{% url 'add' %}">
+            <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="field">
                     <div class="control">
-                        {{form.text}}
+                        {{form.text}}<!-- {{form.as_p}} -->
+                        {{form.cover}}
                     </div>
                 </div>
-                <div class="file">
+                <!-- {{form.as_P}} -->
+                <!-- <div class="file">
                     <label class="file-label">
                       <input class="file-input" type="file" name="resume">
                       <span class="file-cta">
@@ -40,14 +45,28 @@
                         </span>
                       </span>
                     </label>
-                  </div>
+                  </div> -->
 
                 <div class="field is-grouped is-grouped-right">
                     <div class="control">
                         <button class="button is-link">Submit</button>
                     </div>
-                </div>
+                </div>            
             </form>
+
+            <video id="player" controls></video>
+                <script>
+                var player = document.getElementById('player');
+
+                var handleSuccess = function(stream) {
+                    player.srcObject = stream;
+                };
+
+                navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+                    .then(handleSuccess)
+                </script>
+
+
         </div>
 
     </section>
