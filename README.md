@@ -1,0 +1,2 @@
+# emoJ
+Django app
