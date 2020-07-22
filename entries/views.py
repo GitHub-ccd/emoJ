@@ -14,7 +14,6 @@ def add(request):
     
     if request.method == 'POST':
         form = EntryForm(request.POST, request.FILES)
-        print(form)
 
         # check is the data entered is valid  
         if form.is_valid():
