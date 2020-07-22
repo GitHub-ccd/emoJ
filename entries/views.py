@@ -11,10 +11,12 @@ def index(request):
     return render(request, 'entries/index.html', context)
 
 def add(request):
+    
     if request.method == 'POST':
         form = EntryForm(request.POST, request.FILES)
+        print(form)
 
-        # check is the data entered is valid
+        # check is the data entered is valid  
         if form.is_valid():
             form.save()
             return redirect('home')
