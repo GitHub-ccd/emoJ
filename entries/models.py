@@ -6,6 +6,7 @@ class Entry(models.Model):
     date_posted = models.DateTimeField(auto_now_add=True)
     #title = models.TextField()
     cover = models.ImageField(upload_to='images/')
+    result = models.ImageField(upload_to='predict/',  blank = True)
 
     def __str__(self):
         return 'Entry #{}'.format(self.id)

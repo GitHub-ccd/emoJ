@@ -1,4 +1,4 @@
-import tensorflow as tf
+# import tensorflow as tf
 
 import keras
 from keras.models import Sequential
@@ -14,13 +14,55 @@ import matplotlib.pyplot as plt
 
 import cv2
 
-#Saving the model
-model = load_model('templates/model100.h5', compile=False)
-#model.summary()
+
+def facecrop(image):  
+    """
+    Use pretrained HAAR cascade to detect the face and build a bounding box 
+    """
+    facedata = 'templates/haarcascade_frontalface_alt.xml'
+    #facedata = "templates/haarcascade_frontalface_default.xml"
+    cascade = cv2.CascadeClassifier(facedata)
+
+    img = cv2.imread(image)
+
+    try:
+    
+        minisize = (img.shape[1],img.shape[0])
+        print(img.shape[1],img.shape[0])
+        miniframe = cv2.resize(img, minisize)
+
+        faces = cascade.detectMultiScale(miniframe)
+
+        for f in faces:
+            x, y, w, h = [ v for v in f ]
+            cv2.rectangle(img, (x,y), (x+w,y+h), (0,255,0), 2)
+
+            sub_face = img[y:y+h, x:x+w]
+
+            
+            cv2.imwrite('media/predict/crop.jpg', sub_face)
+            print("Writing: ", image)
+        
+
+    except Exception as e:
+        print (e)
+
+    #cv2.imshow(image, img)
+    #plt.imshow(img)
 
 def emotion_analysis(file):
     # true_image = image.load_img(file) 
-    
+    model = load_model('templates/model100.h5', compile=False)
+    #model.summary()
+
+    output = str(file).split(".", 1)[0].replace('images','predict')
+    output = output+'_pred.png'
+
+    file = 'media/'+str(file)
+
+    facecrop(file)
+    file = 'media/predict/crop.jpg'
+
     img = image.load_img(file, color_mode = "grayscale", target_size=(48, 48))
 
     x = image.img_to_array(img)
@@ -45,9 +87,11 @@ def emotion_analysis(file):
     plt.xticks(y_pos, objects)
     plt.ylabel('percentage')
     plt.title('emotion')
-    
+    # print(emotions)
     #plt.show()
-    plt.savefig('media/predict/result.png')
+
+    plt.savefig('media/'+output)
+    return output 
 
 
 

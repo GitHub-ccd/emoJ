@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Emotional Journal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+    <style>
+        body {
+          background-image: url('/media/emoji_pallett_2.jpg');
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +21,7 @@
                 <figure class="image is-48x48">
                     <img src="/media/logo.png" alt="">
                 </figure>
-                <h1 class="title">
+                <h1 class="title has-text-weight-bold">
                     Emotional Journal
                 </h1>
             </div>
@@ -28,8 +33,8 @@
 
             <article class="media">
                 <div class="media-content">
-                    <div class="content">
-                        <a href="{% url 'add' %}">Add new entry</a>
+                    <div class="box is-size-4">
+                        <a class="has-text-link has-text-weight-bold" href="{% url 'add' %}">Add new entry</a>
                     </div>
                 </div>
             </article>
@@ -38,16 +43,23 @@
 
             <article class="media">
                 <div class="media-content">
-                    <div class="content">
+                    <div class="content is-size-4">
                         <p>
                             <strong>{{ entry.date_posted}} </strong>
-                            <br> {{ entry.text }}
+                            <br> <p class="is-family-sans-serif has-text-weight-semibold">{{ entry.text }}</p>
                         </p>
+                    </div>
+                    <div class="tile">
                         <figure class="image is-128x128">
                             <img src="{{ entry.cover.url}}" alt="">
                         </figure>
-                        
-                    </div>
+                        <figure class="image is-256x256">
+                            {% if entry.result.url %}
+                                <img src="{{ entry.result.url }}" alt="">
+                            {% endif %}
+                        </figure>
+                      </div>
+
                 </div>
             </article>
 
