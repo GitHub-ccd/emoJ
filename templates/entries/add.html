@@ -24,7 +24,8 @@
     </section>
     <section class="section">
         <div class="container">
-            <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data">
+            <form method="POST" action="{% url 'add' %}" enctype="multipart/form-data"> 
+                <!-- {% url 'add' %} -->
                 {% csrf_token %}
                 <div class="field">
                     <div class="control">
@@ -42,7 +43,7 @@
             </form>
 
             <!-- video recoding elemant. Have to get it to save images -->
-            <video id="player" controls></video>
+            <!-- <video id="player" controls></video>
                 <script>
                 var player = document.getElementById('player');
 
@@ -50,9 +51,9 @@
                     player.srcObject = stream;
                 };
 
-                navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+                navigator.mediaDevices.getUserMedia({ audio: true, video: true }) 
                     .then(handleSuccess)
-                </script>
+                </script> -->
 
 
         </div>
