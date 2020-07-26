@@ -103,17 +103,20 @@ Train acc: 91.74%
 # Conclusion:  
 ------------
 This study presents a deep CNN based approach for the detection of human emotion based on images.
-We have demonstrated how to distinguish between Normal and Pneumonia Chest X-Rays with our model having an Accuracy of 89% and a Recall of 90%
-We constucted a Convolutional Neural Network model from scratch to extract features from a given Chest X-Ray image and classify it to determine if a person is infected with Pneumonia.
+
 
 # Recommendations:  
 ------------
-Incorporate our model to see how it works in hospitals so that it can assist health professionals diagnose patients with Pneumonia. Ofcourse these reports have to be validated. This is not the ultimate test. This needs to be certified by health professionals.
-This model should be run under the supervision of a radiologist to enhance accuracy/recall to improve treatment outcomes which will increase hospitals' ratings and fundings.
+to be added 
+
 
 # Future Work:
 ------------
-We need more data to run our validation set on so that we can be sure of the way the model is predicting.
+- user authentication and expand DB 
+- add retraining model for each user 
+- add capability for users to update labels so that model gain accuracy with usage
+- deploy the Django webapp 
+- develop and deploy Android and IOS apps 
 
 
 
