@@ -12,13 +12,15 @@
           background-image: url('/media/emoji_pallett_2.jpg');
         }
     </style>
+</body>
+
 </head>
 
 <body>
     <section class="hero is-primary">
         <div class="hero-body">
             <div class="container">
-                <figure class="image is-48x48">
+                <figure class="image is-96x96">
                     <img src="/media/logo.png" alt="">
                 </figure>
                 <h1 class="title has-text-weight-bold">
@@ -43,21 +45,21 @@
 
             <article class="media">
                 <div class="media-content">
-                    <div class="content is-size-4">
+                    <div class="box is-size-4">
                         <p>
                             <strong>{{ entry.date_posted}} </strong>
                             <br> <p class="is-family-sans-serif has-text-weight-semibold">{{ entry.text }}</p>
                         </p>
                     </div>
-                    <div class="tile">
+                    <div class="tile box">
                         <figure class="image is-128x128">
                             <img src="{{ entry.cover.url}}" alt="">
                         </figure>
+                        {% if entry.result.url %}
                         <figure class="image is-256x256">
-                            {% if entry.result.url %}
-                                <img src="{{ entry.result.url }}" alt="">
-                            {% endif %}
+                            <img src="{{ entry.result.url }}" alt="">
                         </figure>
+                        {% endif %}
                       </div>
 
                 </div>
