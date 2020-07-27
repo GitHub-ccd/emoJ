@@ -88,7 +88,7 @@ Improved Model|0.|0.|0.|0.
 
 __Confusion Matrix for our Test Set-__
 
-![](./ppt/Confusion_matrix.png)
+![](./ppt/Confusion_matrix.PNG)
 
 # predictions 
 For any given image, the app will identify the main face, crop it and then make prediction of the emotional state as a bar chart. 
