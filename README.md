@@ -81,24 +81,20 @@ Following dependancies are required to run this app:
 
 Model|Loss|Accuracy|Val_Loss|Val_Accuracy
 -----|----|--------|--------|------------
-Base|Model|0.27|0.94|0.89|0.73
-Improved Model|0.21|0.92|0.29|0.89
+Base|Model|0.06|0.97|3.10|0.56
+Improved Model|0.|0.|0.|0.
 
 
 
 __Confusion Matrix for our Test Set-__
 
-![](/images/Confusion_matrix.png)
+![](./ppt/Confusion_matrix.png)
 
-__For our Test set :__  
-TEST METRICS  
-Accuracy: 88.94%  
-Precision: 91.9%  
-Recall: 90.25%  
-F1-score: 91.07   
+# predictions 
+For any given image, the app will identify the main face, crop it and then make prediction of the emotional state as a bar chart. 
 
-TRAIN METRIC  
-Train acc: 91.74%  
+![](./ppt/crop.jpg)  ![](./ppt/1_pred.png) 
+
 
 # Conclusion:  
 ------------
