@@ -101,7 +101,7 @@ For any given image, the app will identify the main face, crop it and then make 
 # Website:
 Following is the snapshots of the website for the emoJ webapp. 
 
-![](./ppt/website_index.png) 
+![](./ppt/website_index.PNG) 
 ![](./ppt/website_form.png) 
 
 
