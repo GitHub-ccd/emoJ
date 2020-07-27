@@ -61,7 +61,7 @@ Following dependancies are required to run this app:
      │   │   ├── urls.py              <- add the urls to urlpatterns
      │   │   ├── views.py	          <- class to push data to html templates
      │   │   ├── forms.py             <- class to create input form in app.html
-     │   │   └── FER.py 			  <- CNN inferance to predict emotion and pass 
+     │   │   └── FER.py               <- CNN inferance to predict emotion and pass 
      │   │                               it to views.py
      │   ├── manage.py                <- run server           
      │   ├── media/                   <- temperory images for CNN inferance, other static files.    
