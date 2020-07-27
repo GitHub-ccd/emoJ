@@ -81,14 +81,14 @@ Following dependancies are required to run this app:
 
 Model|Loss|Accuracy|Val_Loss|Val_Accuracy
 -----|----|--------|--------|------------
-Base|Model|0.06|0.97|3.10|0.56
+Base Model|0.06|0.97|3.10|0.56
 Improved Model|0.|0.|0.|0.
 
 
 
 __Confusion Matrix for our Test Set-__
 
-![](./ppt/Confusion_matrix.png)
+![](./ppt/confusion_matrix.png)
 
 # predictions 
 For any given image, the app will identify the main face, crop it and then make prediction of the emotional state as a bar chart. 
