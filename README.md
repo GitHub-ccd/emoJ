@@ -28,7 +28,7 @@ The overall strategy is a three stage process.
 1. FER2013 dataset is loaded and used to build the initial model. 
 2. Scraped images and carefully labelled and used to further refine model built in stage-1
 3. Small set of images from a single user is gathered and trained to build the 3rd stage of the model, that will be a continuous improvement with usage. 
-In the first, we load the XML file for detecting the presence of faces and then we retrain our network with our image on five diffrent categories. After that, we import the label_image.py program from the [last video]() and set up everything in realtime.
+
 
 # Steps to build a emotion recongnition model at each stage
 ------------
