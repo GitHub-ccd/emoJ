@@ -1,4 +1,4 @@
-# ![](./ppt/myLogo.png) emoJ - an emotional journal
+# ![](./ppt/myLogo.png) emoJ - A Journal of Emotion
 
 
 # Vision:
@@ -51,29 +51,34 @@ Following dependancies are required to run this app:
 # Project Outline
 ------------
 
-
-    ├── README.md                    <- Project description (this file)
-    ├── emoJ/                        <- Django webapp (manage.py) 
-    │   ├── emoj/                    <- Django app main organization code. 
-    │   │                               added secrets.py to hide the private key  
-    │   ├── entries/                 <- code for handling Index and Form update 
-    │   │   ├── models.py            <- create the database
-	│   │   ├── urls.py              <- add the urls to urlpatterns
-    │   │   ├── views.py	         <- class to push data to html templates
-    │   │   ├── forms.py             <- class to create input form in app.html
-    │   │   └── FER.py               <- CNN inferance to predict emotion and pass it to views.py
-    │   ├── manage.py                <- run server          
-    │   ├── media/                   <- temperory images for CNN inferance, other static files. 
-    │   └── templates/               <- web templates and model files. (improved models ".h5" can be set here)
-    │       └── entries              <- index.html and app.html                        
-    ├── util/                        <- utility scripts for web scraping and EDA
-    │   ├── search_and_download.py   <- Webscrping images from google via selenium
-    │   ├── face_crop.py             <- face detection, resize and crop images 
-    │   └── face_2_num.py            <- convert croped and cleaned images to a .csv                        
-    ├── ppt/                         <- presentation and reports                        
-    ├── FED.ipynb                    <- CNN model based on FER2013 dataset                        
-    ├── FED_transfer.ipynb           <- CNN model based on web scraped images dataset                         
-    └── models/                      <- saved model .h5 files.  
+     ├── README.md                    <- Project description (this file)
+     │ 
+     ├── emoJ/                        <- Django webapp (manage.py) 
+     │   ├── emoj/                    <- Django app main organization code 
+     │   │                               added secrets.py to hide the private key 
+     │   ├── entries/                 <- code for handling Index and Form update 
+     │   │   ├── models.py            <- create the database
+     │   │   ├── urls.py              <- add the urls to urlpatterns
+     │   │   ├── views.py	          <- class to push data to html templates
+     │   │   ├── forms.py             <- class to create input form in app.html
+     │   │   └── FER.py 			  <- CNN inferance to predict emotion and pass 
+     │   │                               it to views.py
+     │   ├── manage.py                <- run server           
+     │   ├── media/                   <- temperory images for CNN inferance, other static files.    
+     │   └── templates/               <- web templates and model files. 
+     │       │                           (improved models ".h5" can be set here)
+     │       └── entries              <- index.html and app.html                        
+     ├── util/                        <- utility scripts for web scraping and EDA
+     │   ├── search_and_download.py   <- Webscrping images from google via selenium
+     │   ├── face_crop.py             <- face detection, resize and crop images 
+     │   └── face_2_num.py            <- convert croped and cleaned images to a .csv                       
+     ├── ppt/                         <- presentation and reports                        
+     ├── FED_regularize.ipynb         <- CNN model based on FER2013 dataset                       
+     ├── FED_transfer.ipynb           <- CNN model transfered from FER2013 and 
+     │                                   re-trained on web scraped images dataset 
+     ├── FIW_stage2.ipynb             <- CNN trained on FER2013+FIW datasets 
+     ├── user_stage3.ipynb            <- CNN trained on small smaple of single user   
+     └── models/                      <- saved model .h5 files. (too large files were removed)
 
 
 # Findings:
@@ -85,9 +90,6 @@ Base Model|0.06|0.97|3.10|0.56
 Improved Model|0.02|0.76|0.01|0.61
 
 
-
-
-
 __Confusion Matrix__
 ![](./ppt/cm.png)
 
@@ -96,15 +98,24 @@ For any given image, the app will identify the main face, crop it and then make 
 
 ![](./ppt/happy.jpg) 
 
+# Website:
+Following is the snapshots of the website for the emoJ webapp. 
+
+![](./ppt/website_index.png) 
+![](./ppt/website_form.png) 
+
 
 # Conclusion:  
 ------------
-This study presents a deep CNN based approach for the detection of human emotion based on images.
-
+This study presents a deep CNN based approach for the detection of human emotion from images. Our improved model has a 76% training and 61% validation accuracy. Using web scraped images proved to decrease the model accuracy. However, with a very small set of images from a single user can quickly build a model that is well optimized for that particular user. Thus, for the purpose of a journal app the models constructed here surfice. With continious improvement of the model will bring about higher accuracy for each individual user. 
 
 # Recommendations:  
 ------------
-to be added 
+- The model is demonstrated to work as a web app. 
+- User must input at least 10 images per emotion to get a baseline model and give a reasonable accuracy
+- The app will be built to continiously feed new images and labels from the user so that it will improve predictions 
+  with the usage.
+- The aggregation of journal entries will provide much valuable insight to users emotional state with time and could possible be a valuable assest to psychiatrists, psychotherapist as well as general physicians as an informative tool to diagnose patients. 
 
 
 # Future Work:
