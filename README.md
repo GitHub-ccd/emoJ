@@ -38,9 +38,9 @@ Building a model at each stage givien above a 3 fold
 3. A CNN model is built using Keras library. 
 
 
-# Dependancies
+# Dependencies
 ------------
-Following dependancies are required to run this app:
+Following dependencies are required to run this app:
 
 - numpy, pandas, Selenium
 - tensorflow, Keras
