@@ -105,20 +105,20 @@ Following is the snapshots of the website for the emoJ webapp.
 
 # Conclusion:  
 ------------
-This study presents a deep CNN based approach for the detection of human emotion from images. Our improved model has a 76% training and 61% validation accuracy. Using web scraped images proved to decrease the model accuracy. However, with a very small set of images from a single user can quickly build a model that is well optimized for that particular user. Thus, for the purpose of a journal app the models constructed here surfice. With continious improvement of the model will bring about higher accuracy for each individual user. 
+This study presents a deep CNN based approach for the detection of human emotion from images. Our improved model has a 76% training and 61% validation accuracy. Using web scraped images proved to decrease the model accuracy. However, with a very small set of images from a single user can quickly build a model that is well optimized for that particular user. Thus, for the purpose of a journal app the models constructed here suffice. With continious improvement of the model will bring about higher accuracy for each individual user. 
 
 # Recommendations:  
 ------------
 - The model is demonstrated to work as a web app. 
 - User must input at least 10 images per emotion to get a baseline model and give a reasonable accuracy
-- The app will be built to continiously feed new images and labels from the user so that it will improve predictions 
+- The app will be built to continuously feed new images and labels from the user so that it will improve predictions 
   with the usage.
-- The aggregation of journal entries will provide much valuable insight to users emotional state with time and could possible be a valuable assest to psychiatrists, psychotherapist as well as general physicians as an informative tool to diagnose patients. 
+- The aggregation of journal entries will provide much valuable insight to users emotional state with time and could possible be an asset to psychiatrists, psychotherapist as well as general physicians as an informative tool to diagnose patients. 
 
 
 # Future Work:
 ------------
-- user authentication and expand DB 
+- Implement user authentication and expand DB 
 - add retraining model for each user 
 - add capability for users to update labels so that model gain accuracy with usage
 - deploy the Django webapp 
