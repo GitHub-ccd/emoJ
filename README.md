@@ -89,8 +89,6 @@ Model|Loss|Accuracy|Val_Loss|Val_Accuracy
 Base Model|0.06|0.97|3.10|0.56
 Improved Model|0.02|0.76|0.01|0.61
 
-
-__Confusion Matrix__
 ![](./ppt/cm.png)
 
 # predictions 
