@@ -96,7 +96,7 @@ __Confusion Matrix__
 # predictions 
 For any given image, the app will identify the main face, crop it and then make prediction of the emotional state as a bar chart. 
 
-![](./ppt/happy.jpg) 
+![](./ppt/emo_tests.jpg) 
 
 # Website:
 Following is the snapshots of the website for the emoJ webapp. 
