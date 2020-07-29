@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Entry
 from .forms import EntryForm
-from .FER import emotion_analysis 
+from .FER import emotion_analysis
+from .tests import send_err
 
 #emotion_analysis('templates/1.jpg')
 
@@ -26,7 +27,10 @@ def add(request):
         if form.is_valid():
             form.save()
             #print("This is the input image :=", form.instance.cover)
-            form.instance.result = emotion_analysis(form.instance.cover)
+            try:
+                form.instance.result = emotion_analysis(form.instance.cover)
+            except:
+                form.instance.result = send_err()
             form.save()
 
 
