@@ -1,4 +1,4 @@
-# ![](./ppt/myLogo.png) emoJ - A Journal of Emotion
+# A Facial Expression Classification 
 
 
 # Vision:
